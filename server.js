@@ -7,7 +7,7 @@ import authRouter from "./routes/authRoutes.js";
 import folderRouter from "./routes/folderRoutes.js";
 import uploadRouter from "./routes/uploadRouter.js";
 import imageRoutes from "./routes/imageRoutes.js";
-import ServerlessHttp from "serverless-http";
+import serverless from "serverless-http";
 
 connectDB();
 
@@ -37,4 +37,4 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-export const handler = ServerlessHttp(app);
+export const handler = serverless(app);
