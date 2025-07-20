@@ -7,7 +7,6 @@ import authRouter from "./routes/authRoutes.js";
 import folderRouter from "./routes/folderRoutes.js";
 import uploadRouter from "./routes/uploadRouter.js";
 import imageRoutes from "./routes/imageRoutes.js";
-import serverless from "serverless-http";
 
 connectDB();
 
@@ -17,8 +16,8 @@ app.use(express.json());
 
 app.use(
   cors({
-    // origin: "http://localhost:5173",
-    origin: "https://drive-web.vercel.app",
+    origin: "http://localhost:5173",
+    // origin: "https://drive-web.vercel.app",
     credentials: true,
   })
 );
@@ -32,9 +31,7 @@ app.use("/api/folder", folderRouter);
 app.use("/api/upload", uploadRouter);
 app.use("/api", imageRoutes);
 
-// const PORT = process.env.PORT || 2000;
-// app.listen(PORT, () => {
-//   console.log(`Server running on port ${PORT}`);
-// });
-
-export const handler = serverless(app);
+const PORT = process.env.PORT || 2000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
