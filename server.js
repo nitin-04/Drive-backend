@@ -32,9 +32,9 @@ app.use("/api/folder", folderRouter);
 app.use("/api/upload", uploadRouter);
 app.use("/api", imageRoutes);
 
-const PORT = process.env.PORT || 2000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// const PORT = process.env.PORT || 2000;
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
 
 export const handler = serverless(app);
