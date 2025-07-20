@@ -16,8 +16,8 @@ app.use(express.json());
 
 app.use(
   cors({
-    // origin: "http://localhost:5173",
-    origin: "https://drive-web.vercel.app",
+    origin: "http://localhost:5173",
+    // origin: "https://drive-web.vercel.app",
     credentials: true,
   })
 );
@@ -33,5 +33,5 @@ app.use("/api", imageRoutes);
 
 const PORT = process.env.PORT || 2000;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  // console.log(`Server running on port ${PORT}`);
 });

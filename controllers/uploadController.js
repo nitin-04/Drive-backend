@@ -42,7 +42,7 @@ export const uploadImage = async (req, res) => {
     };
 
     const result = await streamUpload(req.file.buffer);
-    console.log("Cloudinary upload result:", result);
+    // console.log("Cloudinary upload result:", result);
 
     const newImage = await Image.create({
       folder: folderId,
